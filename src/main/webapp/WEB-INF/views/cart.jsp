@@ -62,8 +62,10 @@
                 			</div>
                 		</form>
                 	</div>
-			</div>
-			<div class="login_area">
+			</div> --%>
+			
+			
+		<%-- 	<div class="login_area">
 			
 				<!-- 로그인 하지 않은 상태 -->
 				<c:if test = "${member == null }">
@@ -81,7 +83,9 @@
 					</div>
 				</c:if>
 				
-			</div>
+			</div> --%>
+			
+			
 			<div class="clearfix"></div>			
 		</div>
 		<div class="content_area">
@@ -180,10 +184,15 @@
 											<span class="delivery_price">3000</span>원
 										</td>
 									</tr>									
-									<tr>
+									<!-- <tr>
 										<td>총 주문 상품수</td>
+<<<<<<< HEAD
 										<td><span class="totalCount_span"></span>개</td>
 									</tr>
+=======
+										<td><span class="totalKind_span"></span>종 <span class="totalCount_span"></span>권</td>
+									</tr> -->
+>>>>>>> branch 'master' of https://github.com/JYY333/3scoops.git
 								</table>
 							</td>
 							<td>

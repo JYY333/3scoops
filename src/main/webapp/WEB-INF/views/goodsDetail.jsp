@@ -51,7 +51,8 @@
 			<div class="logo_area">
 				<a href="/main"><img src="/resources/img/mLogo.png"></a>
 			</div>
-			<div class="search_area">
+			<!-- 검색 폼 영역 -->
+			<%-- <div class="search_area">
                 	<div class="search_wrap">
                 		<form id="searchForm" action="/search" method="get">
                 			<div class="search_input">
@@ -64,8 +65,10 @@
                 			</div>
                 		</form>
                 	</div>
-			</div>
-			<div class="login_area">
+			</div> --%>
+			
+			
+			<%-- <div class="login_area">
 			
 				<!-- 로그인 하지 않은 상태 -->
 				<c:if test = "${member == null }">
@@ -84,7 +87,9 @@
 					</div>
 				</c:if>
 				
-			</div>
+			</div> --%>
+			
+			
 			<div class="clearfix"></div>			
 		</div>
 		<div class="content_area">
