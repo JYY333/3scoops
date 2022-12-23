@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="com.threescoops.mapper.AdminMapper">
+
+  	<!-- 상품 등록 -->
+  	<insert id="mealkitEnroll">
+  	
+  		<selectKey resultType="int" keyProperty="mealkitId" order="AFTER">
+
+  			SELECT mealkit_seq.CURRVAL from dual
+  		
+  		</selectKey>  	
+  	
+  		insert into threescoops_mealkit(mealkitId, mealkitName, authorId, publeYear, publisher, cateCode, mealkitPrice, mealkitStock, mealkitDiscount, mealkitIntro, mealkitContents)
+		values(mealkit_seq.NEXTVAL,#{mealkitName},#{authorId}, #{publeYear},#{publisher},#{cateCode},#{mealkitPrice},#{mealkitStock},#{mealkitDiscount},#{mealkitIntro},#{mealkitContents})
+
+  	</insert>
+
+  	<!-- 카테고리 리스트 -->
+  	<select id="cateList" resultType="com.threescoops.model.CateVO">
+  	
+  		select * from threescoops_bcate order by catecode
+  	
+  	</select>
+  	
+  	<!-- 상품 리스트 -->
+  	<select id="goodsGetList" resultType="com.threescoops.model.MealkitVO">
+  	
+	  	<![CDATA[
+		select * from(
+		    select /*+INDEX_DESC(threescoops_mealkit SYS_C007551)*/ rownum as rn, mealkitId, mealkitName,
+		        (select authorName from threescoops_author where threescoops_mealkit.authorId = threescoops_author.authorId) authorName,
+		        (select cateName from threescoops_bcate where threescoops_mealkit.cateCode = threescoops_bcate.cateCode) cateName,mealkitStock,regDate
+		    from threescoops_mealkit 
+		    where 
+		]]>    
+		
+		    <if test="keyword != null">
+		    
+			    mealkitName like '%' || #{keyword} || '%' and
+			    
+		    </if>
+		     
+		<![CDATA[    
+		    rownum <= #{pageNum} * #{amount} 
+		    )
+		where rn > (#{pageNum} -1) * #{amount}		  	
+  		]]>
+  	
+  	</select>
+  	
+  	<!-- 상품 총 개수 -->
+  	<select id="goodsGetTotal" resultType="int">
+  	
+  		select count(*) from threescoops_mealkit
+  		
+  		<if test="keyword != null">
+  		
+  			where mealkitName like '%' || #{keyword} || '%'
+  		</if>
+  		
+  	</select>  	
+
+	<!-- 상품 조회 페이지 -->
+	<select id="goodsGetDetail" resultType="com.threescoops.model.MealkitVO">
+	
+		select mealkitId, mealkitName, (select authorName from threescoops_author where authorId =threescoops_mealkit.authorId) authorName, 
+			authorId, publeYear, publisher, cateCode, mealkitPrice, mealkitStock, mealkitDiscount, mealkitIntro, mealkitContents, regDate, updateDate 
+		from threescoops_mealkit where mealkitId = #{mealkitId}
+	
+	</select>
+	
+	<!-- 상품 정보 수정 -->
+	<update id="goodsModify">
+		
+		update threescoops_mealkit set mealkitName = #{mealkitName}, authorId = #{authorId}, publeYear = #{publeYear}, publisher = #{publisher}, cateCode = ${cateCode}, 
+		mealkitPrice = #{mealkitPrice}, mealkitStock = #{mealkitStock}, mealkitDiscount = #{mealkitDiscount}, mealkitIntro = #{mealkitIntro}, mealkitContents = #{mealkitContents}, updateDate = sysdate
+		where mealkitId = ${mealkitId}
+		
+	</update>	
+	
+	<!-- 상품 정보 삭제 -->
+	<delete id="goodsDelete">
+	
+		delete from threescoops_mealkit where mealkitId = #{mealkitId}
+	
+	</delete>	
+
+	<!-- 이미지 등록 -->
+	<insert id="imageEnroll">
+	
+		insert into threescoops_image(mealkitId, fileName, uploadPath, uuid) values (#{mealkitId}, #{fileName}, #{uploadPath}, #{uuid})
+	
+	</insert>
+	
+	<!-- 지정 상품 이미지 전체 삭제 --> 
+	<delete id="deleteImageAll">
+	
+		delete FROM threescoops_image where mealkitId = #{mealkitId}
+	
+	</delete>	
+	
+	<!-- 어제자 날자 이미지 리스트 -->
+	<select id="checkFileList" resultType="com.threescoops.model.AttachImageVO">
+	
+		select * from threescoops_image where uploadpath = to_char(sysdate -1, 'yyyy\mm\dd')	
+	
+	</select>
+	
+	<!-- 지정 상품 이미지 정보 얻기 -->
+	<select id="getAttachInfo" resultType="com.threescoops.model.AttachImageVO">
+	
+		select * from threescoops_image where mealkitId = #{mealkitId}
+	
+	</select>	
+	
+	<!-- 주문 리스트 -->
+	<select id="getOrderList" resultType="com.threescoops.model.OrderDTO">
+		<![CDATA[
+		select * 
+		from(
+		    select rownum rn, orderId, memberId, orderstate, orderdate
+		    from threescoops_order
+		    where rownum <= #{pageNum} * #{amount} 
+		]]>    
+		<if test="keyword != null">
+			and memberId like '%'||#{keyword}||'%'
+		</if>
+		<![CDATA[
+		    
+		    order by orderdate desc
+		    )
+		where rn > (#{pageNum} -1) * #{amount}
+		]]>
+	</select>	
+	
+	<!-- 상품 총 개수 -->
+	<select id="getOrderTotal" resultType="int">
+	
+		select count(*) from threescoops_order
+		
+	    <if test="keyword != null">
+	    	where memberId like '%'||#{keyword}||'%'
+	    </if>
+	
+	</select>		
+
+  </mapper>

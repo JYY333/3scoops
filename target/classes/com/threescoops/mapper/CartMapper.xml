@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="com.threescoops.mapper.CartMapper">
+
+	<!-- 카트 추가 -->
+	<insert id="addCart">
+  		
+		insert into threescoops_cart(cartId, memberId, mealkitId, mealkitCount)
+		values(CART_SEQ.NEXTVAL, #{memberId}, #{mealkitId}, #{mealkitCount}) 
+	
+	</insert>
+	
+	
+	<!-- 카트 삭제 -->
+	<delete id="deleteCart">
+	
+		delete from threescoops_cart where cartId = #{cartId}
+	
+	</delete>
+	
+	<!-- 카트 수량 수정 -->
+	<update id="modifyCount">
+	
+		update threescoops_cart set mealkitCount=#{mealkitCount} where cartId = #{cartId}
+	
+	</update>
+	
+	
+	<!-- 카트 목록 -->
+	<select id="getCart" resultType="com.threescoops.model.CartDTO">
+	
+		select a.cartId, a.memberId, a.mealkitId, a.mealkitCount, b.mealkitName, b.mealkitPrice, b.mealkitDiscount
+		from threescoops_cart a left outer join threescoops_mealkit b on a.mealkitId = b.mealkitId
+		where memberId = #{memberId}	
+	
+	</select>
+	
+	<!-- 카트 확인 -->
+	<select id="checkCart" resultType="com.threescoops.model.CartDTO">
+	
+		select * from threescoops_cart 
+		where memberId = #{memberId} and mealkitId = #{mealkitId}
+	
+	</select>	
+	
+	<delete id="deleteOrderCart">
+	
+		delete from threescoops_cart where memberId = #{memberId} and mealkitId = #{mealkitId}
+	
+	</delete>	
+	
+	
+  </mapper>
