@@ -47,7 +47,7 @@ public class TaskTest {
 		
 		System.out.println("fileList : ");
 		fileList.forEach( list -> System.out.println(list));
-		System.out.println("========================================");
+		System.out.println("========================================@@@@@@@@@");
 		
 		List<Path> checkFilePath = new ArrayList<Path>();
 		
@@ -58,7 +58,7 @@ public class TaskTest {
 		
 		System.out.println("checkFilePath : ");
 		checkFilePath.forEach(list -> System.out.println(list));
-		System.out.println("========================================");
+		System.out.println("========================================@@@@@@@@@");
 		
 		fileList.forEach(vo -> {
 			Path path = Paths.get("C:\\upload", vo.getUploadPath(), "s_" +  vo.getUuid() + "_" + vo.getFileName());
@@ -67,7 +67,7 @@ public class TaskTest {
 		
 		System.out.println("checkFilePath(썸네일 이미지 정보 추가 후) : ");
 		checkFilePath.forEach(list -> System.out.println(list));
-		System.out.println("========================================");		
+		System.out.println("========================================@@@@@@@@@");		
 		
 		File targetDir = Paths.get("C:\\upload", getFolderYesterDay()).toFile();
 		File[] targetFile = targetDir.listFiles();
@@ -76,7 +76,7 @@ public class TaskTest {
 		for(File file : targetFile) {
 			System.out.println(file);
 		}
-		System.out.println("========================================");			
+		System.out.println("========================================@@@@@@@@@");			
 		
 		List<File> removeFileList = new ArrayList<File>(Arrays.asList(targetFile));
 		
@@ -84,7 +84,7 @@ public class TaskTest {
 		removeFileList.forEach(file -> {
 			System.out.println(file);
 		});		
-		System.out.println("========================================");		
+		System.out.println("========================================@@@@@@@@@");		
 		
 		for(File file : targetFile){
 			checkFilePath.forEach(checkFile ->{
@@ -97,7 +97,7 @@ public class TaskTest {
 		removeFileList.forEach(file -> {
 			System.out.println(file);
 		});
-		System.out.println("========================================");		
+		System.out.println("========================================@@@@@@@@@");		
 		
 		/* 파일 삭제 */
 		for(File file : removeFileList) {
