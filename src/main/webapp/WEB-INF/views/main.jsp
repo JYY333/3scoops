@@ -47,7 +47,7 @@
 					</li>
 				</c:if>				
 				<li>
-					<a href="/resources/html/customerCT.html">고객센터</a>
+					<a href="../resources/html/customerCT.html">고객센터</a>
 				</li>			
 			</ul>			
 		</div>
