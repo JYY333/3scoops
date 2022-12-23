@@ -128,7 +128,7 @@ public class MealkitController {
 	@GetMapping("/goodsDetail/{mealkitId}")
 	public String goodsDetailGET(@PathVariable("mealkitId")int mealkitId, Model model) {
 		
-		logger.info("goodsDetailGET()..........");
+		logger.info("상품 상세페이지에 진입했습니다 @@@@");
 		
 		model.addAttribute("goodsInfo", mealkitService.getGoodsInfo(mealkitId));
 		

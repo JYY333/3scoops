@@ -17,7 +17,7 @@
 				<%@include file="../includes/admin/header.jsp" %>
 				
                 <div class="admin_content_wrap">
-                    <div>상품 관리 페이지</div>
+                    <div>마이 페이지</div>
                 </div>
  
  				<%@include file="../includes/admin/footer.jsp" %>

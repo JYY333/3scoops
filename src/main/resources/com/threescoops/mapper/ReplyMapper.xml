@@ -7,7 +7,8 @@
   	<!-- 댓글등록 -->
   	<insert id="enrollReply">
   	
-  		insert into threescoops_reply(mealkitId, memberId, content, rating) values(#{mealkitId}, #{memberId}, #{content}, #{rating})
+  		insert into threescoops_reply(replyId, mealkitId, memberId, content, rating) 
+  		values(reply_seq.nextval, #{mealkitId}, #{memberId}, #{content}, #{rating})
   	
   	</insert> 
   	

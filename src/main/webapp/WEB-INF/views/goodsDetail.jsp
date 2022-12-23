@@ -31,11 +31,12 @@
 <%-- 					<c:if test="${member.adminCk == 1 }">	<!-- 관리자 계정 -->
 						<li><a href="/admin/main">관리자 페이지</a></li>
 					</c:if>		 --%>		
-					<li><a href="/admin/main">관리자 페이지</a></li>			
 					<li>
 						<a id="gnb_logout_button">로그아웃</a>
 					</li>
-
+					<li>
+						<a href="/admin/main">마이 페이지</a>
+					</li>			
 					<li>
 						<a href="/cart/${member.memberId}">장바구니</a>
 					</li>
@@ -78,6 +79,7 @@
 						<span>회원 : ${member.memberName}</span>
 						<span>충전금액 : <fmt:formatNumber value="${member.money }" pattern="\#,###.##"/></span>
 						<span>포인트 : <fmt:formatNumber value="${member.point }" pattern="#,###" /></span>
+						
 						<a href="/member/logout.do">로그아웃</a>
 					</div>
 				</c:if>
@@ -234,8 +236,7 @@
 					<span class="line">|</span>
 					<li>광고문의</li>
 					<span class="line">|</span>
-					<li>채용정보</li>
-					<span class="line">|</span>
+
 				</ul>
 			</div>
 		</div> <!-- class="footer_nav" -->

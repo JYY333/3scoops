@@ -31,10 +31,7 @@
 						<a href="/member/join">회원가입</a>
 					</li>
 				</c:if>
-				<c:if test="${member != null }">	<!-- 로그인 o -->		
-<%-- 					<c:if test="${member.adminCk == 1 }">	<!-- 관리자 계정 -->
-						<li><a href="/admin/main">관리자 페이지</a></li>
-					</c:if>	 --%>						
+				<c:if test="${member != null }">	<!-- 로그인 o -->							
 					<li>
 						<a id="gnb_logout_button">로그아웃</a>
 					</li>
@@ -143,7 +140,7 @@
 			
 			<div class="ls_wrap">
 				<div class="ls_div_subject">
-					평점순 상품
+					판매 중인 밀키트 상품
 				</div>
 				<div class="ls_div">
 					<c:forEach items="${ls}" var="ls">
@@ -183,8 +180,7 @@
 					<span class="line">|</span>
 					<li>광고문의</li>
 					<span class="line">|</span>
-					<li>채용정보</li>
-					<span class="line">|</span>
+
 				</ul>
 			</div>
 		</div> <!-- class="footer_nav" -->

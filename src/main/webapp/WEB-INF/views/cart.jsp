@@ -27,19 +27,18 @@
 						<a href="/member/join">회원가입</a>
 					</li>
 				</c:if>
-				<c:if test="${member != null }">	<!-- 로그인 o -->		
-<%-- 					<c:if test="${member.adminCk == 1 }">	<!-- 관리자 계정 -->
-						<li><a href="/admin/main">관리자 페이지</a></li>
-					</c:if>		 --%>		
-					<li><a href="/admin/main">마이 페이지</a></li>			
+					<c:if test="${member != null }">	<!-- 로그인 o -->							
 					<li>
 						<a id="gnb_logout_button">로그아웃</a>
 					</li>
-
+					<li>
+						<!-- <a href="/admin/main">마이 페이지</a> -->
+						<a href="#">마이 페이지</a>
+					</li>
 					<li>
 						<a href="/cart/${member.memberId}">장바구니</a>
 					</li>
-				</c:if>				
+				</c:if>			
 				<li>
 					고객센터
 				</li>			
@@ -48,7 +47,7 @@
 		<div class="top_area">
 			<!-- 로고영역 -->
 			<div class="logo_area">
-				<a href="/main"><img src="/resources/img/mLogo.png"></a>
+				<a href="/main"><img src="../resources/img/mLogo.png"></a>
 			</div>
 			<div class="search_area">
                 	<div class="search_wrap">
@@ -136,9 +135,10 @@
 								</td>
 								<td class="td_width_3">${ci.mealkitName}</td>
 								<td class="td_width_4 price_td">
-									<del>정가 : <fmt:formatNumber value="${ci.mealkitPrice}" pattern="#,### 원" /></del><br>
-									판매가 : <span class="red_color"><fmt:formatNumber value="${ci.salePrice}" pattern="#,### 원" /></span><br>
-									마일리지 : <span class="green_color"><fmt:formatNumber value="${ci.point}" pattern="#,###" /></span>
+<%-- 									<del>정가 : <fmt:formatNumber value="${ci.mealkitPrice}" pattern="#,### 원" /></del><br> --%>
+									판매가 : <span class="red_color"><fmt:formatNumber value="${ci.salePrice}" pattern="#,### 원" />
+									</span><br>
+<%-- 									마일리지 : <span class="green_color"><fmt:formatNumber value="${ci.point}" pattern="#,###" /></span> --%>
 								</td>
 								<td class="td_width_4 table_text_align_center">
 									<div class="table_text_align_center quantity_div">
@@ -182,7 +182,7 @@
 									</tr>									
 									<tr>
 										<td>총 주문 상품수</td>
-										<td><span class="totalKind_span"></span>종 <span class="totalCount_span"></span>권</td>
+										<td><span class="totalCount_span"></span>개</td>
 									</tr>
 								</table>
 							</td>
@@ -218,11 +218,10 @@
 									<tbody>
 										<tr>
 											<td>
-												<strong>총 적립 예상 마일리지</strong>
-											
+					<!-- 							<strong>총 적립 예상 마일리지</strong> -->
 											</td>
 											<td>
-												<span class="totalPoint_span">70000</span> 원
+<!-- 												<span class="totalPoint_span">70000</span> 원 -->
 											</td>
 										</tr>
 									</tbody>
@@ -269,8 +268,7 @@
 					<span class="line">|</span>
 					<li>광고문의</li>
 					<span class="line">|</span>
-					<li>채용정보</li>
-					<span class="line">|</span>
+
 				</ul>
 			</div>
 		</div> <!-- class="footer_nav" -->
