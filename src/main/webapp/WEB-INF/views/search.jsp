@@ -56,7 +56,7 @@
                 			<div class="search_input">
                 				<select name="type">
                 					<option value="T">상품명</option>
-                					<option value="A">소매자</option>
+                					<option value="A">배송지</option>
                 				</select>
                 				<input type="text" name="keyword" value="<c:out value="${pageMaker.cri.keyword}"/>">
                     			<button class='btn search_btn'>검 색</button>                				

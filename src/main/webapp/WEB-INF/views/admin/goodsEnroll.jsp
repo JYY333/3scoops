@@ -64,13 +64,13 @@
                     		</div>
                     		<div class="form_section">
                     			<div class="form_section_title">
-                    				<label>소매자</label>
+                    				<label>배송지</label>
                     			</div>
                     			<div class="form_section_content">
                     				<input id="authorName_input" readonly="readonly">
                     				<input id="authorId_input" name="authorId" type="hidden">
-                    				<button class="authorId_btn">소매자 선택</button>
-                    				<span class="ck_warn authorId_warn">소매자를 선택해주세요</span>
+                    				<button class="authorId_btn">배송지 선택</button>
+                    				<span class="ck_warn authorId_warn">배송지를 선택해주세요</span>
                     			</div>
                     		</div>            
                     		<div class="form_section">
@@ -364,7 +364,7 @@ $("#enrollBtn").on("click",function(e){
 	  $( "input[name='publeYear']" ).datepicker(config);
 	});
 	
-/* 소매자 선택 버튼 */
+/* 배송지 선택 버튼 */
 	$('.authorId_btn').on("click",function(e){
 		
 		e.preventDefault();
@@ -372,7 +372,7 @@ $("#enrollBtn").on("click",function(e){
 		let popUrl = "/admin/authorPop";
 		let popOption = "width = 650px, height=550px, top=300px, left=300px, scrollbars=yes";
 		
-		window.open(popUrl,"소매자 찾기",popOption);	
+		window.open(popUrl,"배송지 찾기",popOption);	
 		
 	});
 

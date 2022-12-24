@@ -18,21 +18,21 @@
 				<%@include file="../includes/admin/header.jsp" %>
 				
                 <div class="admin_content_wrap">
-                    <div class="admin_content_subject"><span>소매자 등록</span></div>
+                    <div class="admin_content_subject"><span>배송지 등록</span></div>
                     <div class="admin_content_main">
                     	<form action="/admin/authorEnroll.do" method="post" id="enrollForm">
                     		<div class="form_section">
                     			<div class="form_section_title">
-                    				<label>소매자 이름</label>
+                    				<label>배송지 이름</label>
                     			</div>
                     			<div class="form_section_content">
                     				<input name="authorName">
-                    				<span id="warn_authorName">소매자 이름을 입력 해주세요.</span>
+                    				<span id="warn_authorName">배송지 이름을 입력 해주세요.</span>
                     			</div>
                     		</div>
                     		<div class="form_section">
                     			<div class="form_section_title">
-                    				<label>소속 국가</label>
+                    				<label>배송지 선택</label>
                     			</div>
                     			<div class="form_section_content">
                     				<select name="nationId">
@@ -40,16 +40,16 @@
                     					<option value="01">국내</option>
                     					<option value="02">국외</option>
                     				</select>
-                    				<span id="warn_nationId">소속 국가를 선택해주세요.</span>
+                    				<span id="warn_nationId">배송지 선택를 선택해주세요.</span>
                     			</div>
                     		</div>
                     		<div class="form_section">
                     			<div class="form_section_title">
-                    				<label>소매자소개</label>
+                    				<label>배송지 메모</label>
                     			</div>
                     			<div class="form_section_content">
                     				<input name="authorIntro" type="text">
-                    				<span id="warn_authorIntro">소매자 소개를 입력 해주세요.</span>
+                    				<span id="warn_authorIntro">배송지 소개를 입력 해주세요.</span>
                     			</div>
                     		</div>
                    		</form>
@@ -67,14 +67,14 @@
 /* 등록 버튼 */
 $("#enrollBtn").click(function(){	
 	/* 검사 통과 유무 변수 */
-	let nameCheck = false;			// 소매자 이름
-	let nationCheck = false;		// 소속 국가
-	let introCheck = false;			// 소매자 소개	
+	let nameCheck = false;			// 배송지 이름
+	let nationCheck = false;		// 배송지 선택
+	let introCheck = false;			// 배송지 소개	
 
 	/* 입력값 변수 */
-	let authorName = $('input[name=authorName]').val();		// 소매자 이름
-	let nationId = $('select[name=nationId]').val();		// 소속 국가
-	let authorIntro = $('input[name=authorIntro]').val();	// 소매자 소개
+	let authorName = $('input[name=authorName]').val();		// 배송지 이름
+	let nationId = $('select[name=nationId]').val();		// 배송지 선택
+	let authorIntro = $('input[name=authorIntro]').val();	// 배송지 소개
 	/* 공란 경고 span태그 */
 	let wAuthorName = $('#warn_authorName');
 	let wNationId = $('#warn_nationId');
@@ -89,7 +89,7 @@ $("#enrollBtn").click(function(){
 		nameCheck = true;
 	}
 	
-	/* 소속 국가 공란 체크 */
+	/* 배송지 선택 공란 체크 */
 	if(nationId ==='none'){
 		wNationId.css('display', 'block');
 		nationCheck = false;
@@ -98,7 +98,7 @@ $("#enrollBtn").click(function(){
 		nationCheck = true;
 	}	
 	
-	/* 소매자 소개 공란 체크 */
+	/* 배송지 소개 공란 체크 */
 	if(authorIntro ===''){
 		wAuthorIntro.css('display', 'block');
 		introCheck = false;

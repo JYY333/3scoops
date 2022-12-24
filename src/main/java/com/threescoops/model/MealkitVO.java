@@ -11,10 +11,10 @@ public class MealkitVO {
 	/* 상품 이름 */
 	private String mealkitName;
 	
-	/* 소매자 id */
+	/* 배송지 id */
 	private int authorId;
 	
-	/* 소매자 이름 */
+	/* 배송지 이름 */
 	private String authorName;
 	
 	/* 출판일 */

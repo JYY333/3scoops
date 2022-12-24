@@ -36,13 +36,13 @@
                     		</div>
                     		<div class="form_section">
                     			<div class="form_section_title">
-                    				<label>소매자</label>
+                    				<label>배송지</label>
                     			</div>
                     			<div class="form_section_content">
                     				<input id="authorName_input" readonly="readonly" value="${goodsInfo.authorName}">
                     				<input id="authorId_input" name="authorId" type="hidden" value="${goodsInfo.authorId}">
-                    				<button class="authorId_btn">소매자 선택</button>
-                    				<span class="ck_warn authorId_warn">소매자를 선택해주세요</span>
+                    				<button class="authorId_btn">배송지 선택</button>
+                    				<span class="ck_warn authorId_warn">배송지를 선택해주세요</span>
                     			</div>
                     		</div>            
                     		<div class="form_section">

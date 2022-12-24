@@ -4,19 +4,19 @@ import java.util.Date;
 
 public class AuthorVO {
 
-	/* 소매자 아이디 */
+	/* 배송지 아이디 */
 	private int authorId;
 	
-	/* 소매자 이름 */
+	/* 배송지 이름 */
 	private String authorName;
 	
 	/* 국가 id */
 	private String nationId;
 	
-	/* 소매자 국가 */
+	/* 배송지 국가 */
 	private String nationName;
 	
-	/* 소매자 소개 */
+	/* 배송지 소개 */
 	private String authorIntro;
 	
 	/*등록 날짜*/

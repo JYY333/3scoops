@@ -66,7 +66,7 @@
 		
 	</select>
 	
-	<!-- 소매자 id 리스트 요청 -->
+	<!-- 배송지 id 리스트 요청 -->
 	<select id="getAuthorIdList" resultType="String">
 	
 		select authorid from threescoops_author where authorName like '%' || #{keyword} || '%'

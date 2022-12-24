@@ -179,25 +179,25 @@ public class AdminController {
 		
 	}	
 	
-	/* 소매자 등록 페이지 접속 */
+	/* 배송지 등록 페이지 접속 */
 	@RequestMapping(value = "authorEnroll", method = RequestMethod.GET)
 	public void authorEnrollGET() throws Exception{
-		logger.info("소매자 등록 페이지 접속");
+		logger.info("배송지 등록 페이지 접속");
 	}
 	
-	/* 소매자 관리 페이지 접속 */
+	/* 배송지 관리 페이지 접속 */
 	@RequestMapping(value = "authorManage", method = RequestMethod.GET)
 	public void authorManageGET(Criteria cri, Model model) throws Exception{
 		
-		logger.info("소매자 관리 페이지 접속.........." + cri);
+		logger.info("배송지 관리 페이지 접속.........." + cri);
 		
-		/* 소매자 목록 출력 데이터 */
+		/* 배송지 목록 출력 데이터 */
 		List list = authorService.authorGetList(cri);
 		
 		if(!list.isEmpty()) {
-			model.addAttribute("list",list);	// 소매자 존재 경우
+			model.addAttribute("list",list);	// 배송지 존재 경우
 		} else {
-			model.addAttribute("listCheck", "empty");	// 소매자 존재하지 않을 경우
+			model.addAttribute("listCheck", "empty");	// 배송지 존재하지 않을 경우
 		}
 		
 		/* 페이지 이동 인터페이스 데이터 */
@@ -205,35 +205,35 @@ public class AdminController {
 		
 	}	
 	
-	/* 소매자 등록 */
+	/* 배송지 등록 */
 	@RequestMapping(value="authorEnroll.do", method = RequestMethod.POST)
 	public String authorEnrollPOST(AuthorVO author, RedirectAttributes rttr) throws Exception{
 
 		logger.info("authorEnroll :" +  author);
 		
-		authorService.authorEnroll(author);  	// 소매자 등록 쿼리 수행
+		authorService.authorEnroll(author);  	// 배송지 등록 쿼리 수행
 		
-		rttr.addFlashAttribute("enroll_result", author.getAuthorName());	// 등록 성공 메시지(소매자이름)
+		rttr.addFlashAttribute("enroll_result", author.getAuthorName());	// 등록 성공 메시지(배송지이름)
 		
 		return "redirect:/admin/authorManage";
 		
 	}
 
-	/* 소매자 상세, 수정 페이지 */
+	/* 배송지 상세, 수정 페이지 */
 	@GetMapping({"/authorDetail", "/authorModify"})
 	public void authorGetInfoGET(int authorId, Criteria cri, Model model) throws Exception {
 		
 		logger.info("authorDetail......." + authorId);
 		
-		/* 소매자 관리 페이지 정보 */
+		/* 배송지 관리 페이지 정보 */
 		model.addAttribute("cri", cri);
 		
-		/* 선택 소매자 정보 */
+		/* 선택 배송지 정보 */
 		model.addAttribute("authorInfo", authorService.authorGetDetail(authorId));
 		
 	}	
 
-	/* 소매자 정보 수정 */
+	/* 배송지 정보 수정 */
 	@PostMapping("/authorModify")
 	public String authorModifyPOST(AuthorVO author, RedirectAttributes rttr) throws Exception{
 		
@@ -247,7 +247,7 @@ public class AdminController {
 		
 	}	
 	
-	/* 소매자 정보 삭제 */
+	/* 배송지 정보 삭제 */
 	@PostMapping("/authorDelete")
 	public String authorDeletePOST(int authorId, RedirectAttributes rttr) {
 		
@@ -289,7 +289,7 @@ public class AdminController {
 		return "redirect:/admin/goodsManage";
 	}	
 	
-	/* 소매자 검색 팝업창 */
+	/* 배송지 검색 팝업창 */
 	@GetMapping("/authorPop")
 	public void authorPopGET(Criteria cri, Model model) throws Exception{
 		
@@ -301,9 +301,9 @@ public class AdminController {
 		List list = authorService.authorGetList(cri);
 		
 		if(!list.isEmpty()) {
-			model.addAttribute("list",list);	// 소매자 존재 경우
+			model.addAttribute("list",list);	// 배송지 존재 경우
 		} else {
-			model.addAttribute("listCheck", "empty");	// 소매자 존재하지 않을 경우
+			model.addAttribute("listCheck", "empty");	// 배송지 존재하지 않을 경우
 		}
 		
 		

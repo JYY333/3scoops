@@ -20,16 +20,16 @@
 				<%@include file="../includes/admin/header.jsp" %>
 				
                 <div class="admin_content_wrap">
-                    <div class="admin_content_subject"><span>소매자 관리</span></div>
+                    <div class="admin_content_subject"><span>배송지 관리</span></div>
 					<div class="author_table_wrap">
 						<!-- 게시물 O -->
 						<c:if test="${listCheck != 'empty' }">
 	                    	<table class="author_table">
 	                    		<thead>
 	                    			<tr>
-	                    				<td class="th_column_1">소매자 번호</td>
-	                    				<td class="th_column_2">소매자 이름</td>
-	                    				<td class="th_column_3">소매자 국가</td>
+	                    				<td class="th_column_1">배송지 번호</td>
+	                    				<td class="th_column_2">배송지 이름</td>
+	                    				<td class="th_column_3">배송지 국가</td>
 	                    				<td class="th_column_4">등록 날짜</td>
 	                    				<td class="th_column_5">수정 날짜</td>
 	                    			</tr>
@@ -53,7 +53,7 @@
                 		<!-- 게시물 x -->
                 		<c:if test="${listCheck == 'empty'}">
                 			<div class="table_empty">
-                				등록된 소매자가 없습니다.
+                				등록된 배송지가 없습니다.
                 			</div>
                 		</c:if> 						
                 			
@@ -126,16 +126,16 @@ $(document).ready(function(){
 			return;
 		}
 		
-		alert("소매자'${enroll_result}'을 등록하였습니다.");
+		alert("배송지'${enroll_result}'을 등록하였습니다.");
 		
 	}
 	
 	function checkmResult(mresult){
 		
 		if(mresult === '1'){
-			alert("소매자 정보 수정을 완료하였습니다.");
+			alert("배송지 정보 수정을 완료하였습니다.");
 		} else if(mresult === '0') {
-			alert("소매자 정부 수정을 하지 못하였습니다.")	
+			alert("배송지 정부 수정을 하지 못하였습니다.")	
 		}
 		
 	}
@@ -146,7 +146,7 @@ $(document).ready(function(){
 	if(delete_result == 1){
 		alert("삭제 완료");
 	} else if(delete_result == 2){
-		alert("해당 소매자 데이터를 사용하고 있는 데이터가 있어서 삭제 할 수 없습니다.")
+		alert("해당 배송지 데이터를 사용하고 있는 데이터가 있어서 삭제 할 수 없습니다.")
 	}		
 	
 
@@ -183,7 +183,7 @@ $("#searchForm button").on("click", function(e){
 	
 });
 
-/* 소매자 상세 페이지 이동 */
+/* 배송지 상세 페이지 이동 */
 $(".move").on("click", function(e){
 	
 	e.preventDefault();

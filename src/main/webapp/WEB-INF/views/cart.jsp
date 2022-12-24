@@ -55,14 +55,14 @@
                 			<div class="search_input">
                 				<select name="type">
                 					<option value="T">상품명</option>
-                					<option value="A">소매자</option>
+                					<option value="A">배송지</option>
                 				</select>
                 				<input type="text" name="keyword" value="<c:out value="${pageMaker.cri.keyword}"/>">
                     			<button class='btn search_btn'>검 색</button>                				
                 			</div>
                 		</form>
                 	</div>
-			</div> --%>
+			</div> 
 			
 			
 		<%-- 	<div class="login_area">
@@ -192,7 +192,6 @@
 =======
 										<td><span class="totalKind_span"></span>종 <span class="totalCount_span"></span>권</td>
 									</tr> -->
->>>>>>> branch 'master' of https://github.com/JYY333/3scoops.git
 								</table>
 							</td>
 							<td>

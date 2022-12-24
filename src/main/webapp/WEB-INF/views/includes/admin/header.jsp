@@ -28,10 +28,10 @@
 	                      <a class="admin_list_02" href="/admin/goodsManage">상품 관리</a>
 	                  </li>
 	                  <lI>
-	                      <a class="admin_list_03" href="/admin/authorEnroll">제조사 등록</a>                            
+	                      <a class="admin_list_03" href="/admin/authorEnroll">배송지 등록</a>                            
 	                  </lI>
 	                  <lI>
-	                      <a class="admin_list_04" href="/admin/authorManage">제조사 관리</a>                            
+	                      <a class="admin_list_04" href="/admin/authorManage">배송지 관리</a>                            
 	                  </lI>
 <!-- 	                  <lI>
 	                      <a class="admin_list_05">회원 관리</a>                            

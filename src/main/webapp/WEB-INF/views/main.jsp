@@ -36,8 +36,7 @@
 						<a id="gnb_logout_button">로그아웃</a>
 					</li>
 					<li>
-						<!-- <a href="/admin/main">마이 페이지</a> -->
-						<a href="#">마이 페이지</a>
+						<a href="/admin/main">마이 페이지</a>
 					</li>
 					<li>
 						<a href="/cart/${member.memberId}">장바구니</a>
@@ -236,9 +235,8 @@
 				const uploadPath = bobj.data("path");
 				const uuid = bobj.data("uuid");
 				const fileName = bobj.data("filename");
-				
 				const fileCallPath = encodeURIComponent(uploadPath + "/s_" + uuid + "_" + fileName);
-				
+
 				$(this).find("img").attr('src', '/display?fileName=' + fileCallPath);
 			} else {
 				$(this).find("img").attr('src', '/resources/img/goodsNoImage.png');

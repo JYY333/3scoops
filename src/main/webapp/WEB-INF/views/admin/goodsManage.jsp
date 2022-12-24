@@ -29,7 +29,7 @@
 	                    			<tr>
 										<td class="th_column_1">상품 번호</td>
 	                    				<td class="th_column_2">상품 이름</td>
-	                    				<td class="th_column_3">소매자 이름</td>
+	                    				<td class="th_column_3">배송지 이름</td>
 	                    				<td class="th_column_4">카테고리</td>
 	                    				<td class="th_column_5">재고</td>
 	                    				<td class="th_column_6">등록날짜</td>
@@ -54,7 +54,7 @@
 	                    <!-- 상품 리스트 X -->
                 		<c:if test="${listCheck == 'empty'}">
                 			<div class="table_empty">
-                				등록된 소매자가 없습니다.
+                				등록된 배송지가 없습니다.
                 			</div>
                 		</c:if> 
                 	</div>

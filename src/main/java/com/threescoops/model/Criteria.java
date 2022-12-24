@@ -16,7 +16,7 @@ public class Criteria {
 	/* 검색 키워드 */
 	private String keyword;
 	
-	/* 소매자 리스트 */
+	/* 배송지 리스트 */
 	private String[] authorArr;
 	
 	/* 카테고리 코드 */

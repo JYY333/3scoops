@@ -39,7 +39,7 @@ public class MealkitMapperTests {
 	}
 	*/
 	
-	/* 소매자 id 리스트 요청 */
+	/* 배송지 id 리스트 요청 */
 	/*
 	@Test
 	public void getAuthorId() {
@@ -80,15 +80,15 @@ public class MealkitMapperTests {
 	}	
 	*/
 	
-	/* 검색 (동적 쿼리 적용) - 소매자*/
+	/* 검색 (동적 쿼리 적용) - 배송지*/
 	/*
 	@Test 
 	public void getGoodsListTest1() {
 		//
 		Criteria cri = new Criteria();
 		String type = "A";
-		//String keyword = "유홍준";	// DB에 존재하는 소매자
-		String keyword = "머스크";	// DB에 존재하지 않는 소매자
+		//String keyword = "유홍준";	// DB에 존재하는 배송지
+		String keyword = "머스크";	// DB에 존재하지 않는 배송지
 		String catecode = "";
 		
 		cri.setType(type);
@@ -151,14 +151,14 @@ public class MealkitMapperTests {
 	*/
 	
 	
-	/* 검색 (동적 쿼리 적용) - 카테고리 + 소매자 */
+	/* 검색 (동적 쿼리 적용) - 카테고리 + 배송지 */
 	/*
 	@Test 
 	public void getGoodsListTest4() {
 		Criteria cri = new Criteria();
 		String type = "AC";
-		//String keyword = "유홍준";	// 카테고리에 존재하는 소매자
-		String keyword = "머스크";	// 카테고리에 존재하지 않는 소매자
+		//String keyword = "유홍준";	// 카테고리에 존재하는 배송지
+		String keyword = "머스크";	// 카테고리에 존재하지 않는 배송지
 		String catecode = "103002";
 		
 		cri.setType(type);

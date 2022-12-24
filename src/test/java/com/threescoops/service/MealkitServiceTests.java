@@ -41,8 +41,8 @@ public class MealkitServiceTests {
 		Criteria cri = new Criteria();
 	
 		String type = "AC";
-		String keyword = "유홍준";	// 카테고리에 존재하는 소매자
-		//String keyword = "머스크";	// 카테고리에 존재하지 않는 소매자
+		String keyword = "유홍준";	// 카테고리에 존재하는 배송지
+		//String keyword = "머스크";	// 카테고리에 존재하지 않는 배송지
 		String cateCode = "103002";
 
 		cri.setType(type);
@@ -78,8 +78,8 @@ public class MealkitServiceTests {
 		Criteria cri = new Criteria();
 	
 		String type = "AC";
-		//String keyword = "유홍준";	// 카테고리에 존재하는 소매자
-		String keyword = "머스크";	// 카테고리에 존재하지 않는 소매자
+		//String keyword = "유홍준";	// 카테고리에 존재하는 배송지
+		String keyword = "머스크";	// 카테고리에 존재하지 않는 배송지
 		
 
 		cri.setType(type);

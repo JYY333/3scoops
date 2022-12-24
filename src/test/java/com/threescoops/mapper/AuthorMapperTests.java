@@ -19,7 +19,7 @@ public class AuthorMapperTests {
 	@Autowired
 	private AuthorMapper mapper;
 	
-	/* 소매자 등록 테스트 */
+	/* 배송지 등록 테스트 */
 	/*
 	@Test
 	public void authorEnroll() throws Exception{
@@ -35,7 +35,7 @@ public class AuthorMapperTests {
 	}	
 	*/
 	
-	/* 소매자 목록 테스트 */
+	/* 배송지 목록 테스트 */
 	/*
 	@Test
 	public void authorGetListTest() throws Exception{
@@ -52,7 +52,7 @@ public class AuthorMapperTests {
 	}
 	*/
 	
-	/* 소매자 총 수 */
+	/* 배송지 총 수 */
 	/*
 	@Test
 	public void authorGetTotalTest() throws Exception{
@@ -68,7 +68,7 @@ public class AuthorMapperTests {
 	}
 	*/
 	
-	/* 소매자 상세 페이지 */
+	/* 배송지 상세 페이지 */
 	/*
 	@Test
 	public void authorGetDetailTest() {
@@ -82,7 +82,7 @@ public class AuthorMapperTests {
 	}
 	*/
 	
-	/* 소매자 정보 수정 */
+	/* 배송지 정보 수정 */
 	/*
 	@Test
 	public void authorModifyTest() {
@@ -102,7 +102,7 @@ public class AuthorMapperTests {
 	}
 	*/
 	
-	/* 소매자 정보 삭제 */
+	/* 배송지 정보 삭제 */
 	@Test
 	public void authorDeleteTest() {
 		

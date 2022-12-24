@@ -16,7 +16,7 @@
 <body>
 	<div class="wrapper">
 		<div class="subject_name_warp">
-			<span>소매자 선택</span>
+			<span>배송지 선택</span>
 		</div>
 		<div class="content_wrap">
                	<!-- 게시물 표 영역 -->
@@ -27,9 +27,9 @@
 	                    	<table class="author_table">
 	                    		<thead>
 	                    			<tr>
-	                    				<td class="th_column_1">소매자 번호</td>
-	                    				<td class="th_column_2">소매자 이름</td>
-	                    				<td class="th_column_3">소매자 국가</td>
+	                    				<td class="th_column_1">배송지 번호</td>
+	                    				<td class="th_column_2">배송지 이름</td>
+	                    				<td class="th_column_3">배송지 국가</td>
 	                    			</tr>
 	                    		</thead>
 	                    		<c:forEach items="${list}" var="list">
@@ -49,7 +49,7 @@
                		<!-- 게시물 x -->
                		<c:if test="${listCheck == 'empty'}">
                			<div class="table_empty">
-               				등록된 소매자가 없습니다.
+               				등록된 배송지가 없습니다.
                			</div>
                		</c:if>
                		
@@ -141,7 +141,7 @@
 			
 		});	
 		
-		/* 소매자 선택 및 팝업창 닫기 */
+		/* 배송지 선택 및 팝업창 닫기 */
 		$(".move").on("click", function(e){
 			
 			e.preventDefault();

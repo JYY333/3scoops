@@ -17,7 +17,7 @@ public class AuthorServiceTests {
 	@Autowired
 	private AuthorService service;
 	
-	/* 소매자 등록 테스트 */
+	/* 배송지 등록 테스트 */
 	/*
 	@Test
 	public void authorEnrollTest() throws Exception {
@@ -33,7 +33,7 @@ public class AuthorServiceTests {
 	}
 	*/
 	
-	/* 소매자 목록 구현 */
+	/* 배송지 목록 구현 */
 	/*
 	@Test	
 	public void authorGetListTest() throws Exception{
@@ -49,7 +49,7 @@ public class AuthorServiceTests {
 	}
 	*/
 	
-	/*소매자 상세 페이지*/
+	/*배송지 상세 페이지*/
 	/*
 	@Test
 	public void authorGetDetailTest() throws Exception{
@@ -61,7 +61,7 @@ public class AuthorServiceTests {
 	}
 	*/
 	
-	/* 소매자 정보 수정 */
+	/* 배송지 정보 수정 */
 	@Test
 	public void authorModifyTest() throws Exception {
 		

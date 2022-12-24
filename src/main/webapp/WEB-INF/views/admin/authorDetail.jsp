@@ -17,11 +17,11 @@
 <body>
 				<%@include file="../includes/admin/header.jsp" %>
                 <div class="admin_content_wrap">
-                    <div class="admin_content_subject"><span>소매자 상세</span></div>
+                    <div class="admin_content_subject"><span>배송지 상세</span></div>
                     <div class="admin_content_main">
                    		<div class="form_section">
                    			<div class="form_section_title">
-                   				<label>소매자 번호</label>
+                   				<label>배송지 번호</label>
                    			</div>
                    			<div class="form_section_content">
                    				<input class="input_block" name="authorId" readonly="readonly" value="<c:out value='${authorInfo.authorId }'></c:out>">
@@ -30,7 +30,7 @@
                    		</div>                    
                    		<div class="form_section">
                    			<div class="form_section_title">
-                   				<label>소매자 이름</label>
+                   				<label>배송지 이름</label>
                    			</div>
                    			<div class="form_section_content">
                    				<input class="input_block" name="authorName" readonly="readonly" value="<c:out value='${authorInfo.authorName }'></c:out>" >
@@ -38,7 +38,7 @@
                    		</div>
                    		<div class="form_section">
                    			<div class="form_section_title">
-                   				<label>소속 국가</label>
+                   				<label>배송지 선택</label>
                    			</div>
                    			<div class="form_section_content">
                    				<select class="input_block" name="nationId" >
@@ -50,7 +50,7 @@
                    		</div>
                    		<div class="form_section">
                    			<div class="form_section_title">
-                   				<label>소매자소개</label>
+                   				<label>배송지 메모</label>
                    			</div>
                    			<div class="form_section_content">
                    				<textarea class="input_block" name="authorIntro" readonly="readonly"><c:out value='${authorInfo.authorIntro }'/></textarea>
@@ -73,7 +73,7 @@
                    			</div>
                    		</div>
                    			<div class="btn_section">
-                   				<button id="cancelBtn" class="btn">소매자 목록</button>
+                   				<button id="cancelBtn" class="btn">배송지 목록</button>
 	                    		<button id="modifyBtn" class="btn modify_btn">수 정</button>
 	                    	</div> 
                     </div>                    
@@ -91,7 +91,7 @@
 
 	let moveForm = $("#moveForm");
 
-	/* 소매자 관리 페이지 이동 버튼 */
+	/* 배송지 관리 페이지 이동 버튼 */
 	$("#cancelBtn").on("click", function(e){
 		
 		e.preventDefault();
@@ -102,7 +102,7 @@
 		
 	});
 	
-	/* 소매자 수정 페이지 이동 버튼 */
+	/* 배송지 수정 페이지 이동 버튼 */
 	$("#modifyBtn").on("click", function(e){
 		
 		e.preventDefault();
