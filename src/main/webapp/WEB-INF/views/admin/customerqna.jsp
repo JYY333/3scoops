@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="../resources/css/admin/authorEnroll.css">
+<link rel="stylesheet" href="../resources/css/admin/customerqna.css">
 
 <script
   src="https://code.jquery.com/jquery-3.4.1.js"
@@ -15,42 +15,43 @@
 </head>
 <body>
 
-				<%@include file="../includes/admin/header.jsp" %>
+				<%@include file="../includes/admin/customerqnaheader.jsp" %>
 				
-				<!-- 배송지 등록 영역 -->
+				<!-- 게시글 등록 영역 -->
                 <div class="admin_content_wrap">
-                    <div class="admin_content_subject"><span>배송지 등록</span></div>
+                    <div class="admin_content_subject"><span>QnA글 등록</span></div>
                     <div class="admin_content_main">
                     	<form action="/admin/authorEnroll.do" method="post" id="enrollForm">
                     		<div class="form_section">
                     			<div class="form_section_title">
-                    				<label>배송지 이름</label>
+                    				<label>게시글 제목</label>
                     			</div>
                     			<div class="form_section_content">
                     				<input name="authorName">
-                    				<span id="warn_authorName">배송지 이름을 입력 해주세요.</span>
+                    				<span id="warn_authorName">게시글 제목을 입력하세요</span>
                     			</div>
                     		</div>
                     		<div class="form_section">
                     			<div class="form_section_title">
-                    				<label>배송지 선택</label>
+                    				<label>문의글 종류</label>
                     			</div>
                     			<div class="form_section_content">
                     				<select name="nationId">
                     					<option value="none" selected>=== 선택 ===</option>
-                    					<option value="01">국내</option>
-                    					<option value="02">국외</option>
+                    					<option value="01">배송</option>
+                    					<option value="02">상품</option>
+                    					<option value="03">기타</option>
                     				</select>
-                    				<span id="warn_nationId">배송지 선택를 선택해주세요.</span>
+                    				<span id="warn_nationId">게시글 종류를 선택를 선택해주세요.</span>
                     			</div>
                     		</div>
                     		<div class="form_section">
                     			<div class="form_section_title">
-                    				<label>배송지 메모</label>
+                    				<label>게시글 내용</label>
                     			</div>
                     			<div class="form_section_content">
                     				<input name="authorIntro" type="text">
-                    				<span id="warn_authorIntro">배송지 소개를 입력 해주세요.</span>
+                    				<span id="warn_authorIntro">게시글 내용을 해주세요.</span>
                     			</div>
                     		</div>
                    		</form>
@@ -91,7 +92,7 @@ $("#enrollBtn").click(function(){
 		nameCheck = true;
 	}
 	
-	/* 배송지 선택 공란 체크 */
+	/* 문의글 종류 선택 공란 체크 */
 	if(nationId ==='none'){
 		wNationId.css('display', 'block');
 		nationCheck = false;
@@ -100,7 +101,7 @@ $("#enrollBtn").click(function(){
 		nationCheck = true;
 	}	
 	
-	/* 배송지 소개 공란 체크 */
+	/* 문의글 내용 체크 */
 	if(authorIntro ===''){
 		wAuthorIntro.css('display', 'block');
 		introCheck = false;
@@ -120,7 +121,7 @@ $("#enrollBtn").click(function(){
 
 /* 취소 버튼 */
 $("#cancelBtn").click(function(){
-	location.href="/admin/authorManage"
+	location.href="/admin/customerCT.do"
 });
 
 </script>

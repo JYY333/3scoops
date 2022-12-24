@@ -52,8 +52,8 @@ public class MealkitController {
 		model.addAttribute("cate1", mealkitService.getCateCode1());
 		model.addAttribute("cate2", mealkitService.getCateCode2());
 		model.addAttribute("ls", mealkitService.likeSelect());		
-		
 	}
+	
 	
 	
 	/* 이미지 출력 */

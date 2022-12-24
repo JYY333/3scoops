@@ -27,9 +27,9 @@
 	                    	<table class="author_table">
 	                    		<thead>
 	                    			<tr>
-	                    				<td class="th_column_1">배송지 번호</td>
-	                    				<td class="th_column_2">배송지 이름</td>
-	                    				<td class="th_column_3">배송지 국가</td>
+	                    				<td class="th_column_1">게시글 번호</td>
+	                    				<td class="th_column_2">게시글 제목 </td>
+	                    				<td class="th_column_3">문의내역종류</td>
 	                    				<td class="th_column_4">등록 날짜</td>
 	                    				<td class="th_column_5">수정 날짜</td>
 	                    			</tr>

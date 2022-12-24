@@ -185,11 +185,34 @@ public class AdminController {
 		logger.info("배송지 등록 페이지 접속");
 	}
 	
+	/* 고객센터 등록 페이지 접속*/
+	@RequestMapping(value = "customerCT", method = RequestMethod.GET)
+	public void customerCTGET() throws Exception{
+		logger.info("고객센터 페이지 접속");
+	}
+	/* QnA 페이지 접속 등록!*/
+	@RequestMapping(value = "customerqna", method = RequestMethod.GET)
+	public void QnAGET() throws Exception{
+		logger.info("QNA 페이지 접속");
+	}
+	
+	
+	
+	/*
+	 @RequestMapping(value = "authorEnroll", method = RequestMethod.GET)
+	public void authorEnrollGET() throws Exception{
+		logger.info("배송지 등록 페이지 접속");
+	}
+	
+	 */
+	
+	
+	
 	/* 배송지 관리 페이지 접속 */
 	@RequestMapping(value = "authorManage", method = RequestMethod.GET)
 	public void authorManageGET(Criteria cri, Model model) throws Exception{
 		
-		logger.info("배송지 관리 페이지 접속.........." + cri);
+		logger.info("배송지 관리 페이지 접속성공" + cri);
 		
 		/* 배송지 목록 출력 데이터 */
 		List list = authorService.authorGetList(cri);
@@ -202,22 +225,39 @@ public class AdminController {
 		
 		/* 페이지 이동 인터페이스 데이터 */
 		model.addAttribute("pageMaker", new PageDTO(cri, authorService.authorGetTotal(cri)));
-		
 	}	
 	
-	/* 배송지 등록 */
+	
+	
+	/* qna글 */
 	@RequestMapping(value="authorEnroll.do", method = RequestMethod.POST)
 	public String authorEnrollPOST(AuthorVO author, RedirectAttributes rttr) throws Exception{
 
 		logger.info("authorEnroll :" +  author);
 		
-		authorService.authorEnroll(author);  	// 배송지 등록 쿼리 수행
+		authorService.authorEnroll(author);  	// qna 등록 쿼리 수행
 		
-		rttr.addFlashAttribute("enroll_result", author.getAuthorName());	// 등록 성공 메시지(배송지이름)
+		rttr.addFlashAttribute("enroll_result", author.getAuthorName());	// 등록 성공 메시지(qna)
 		
-		return "redirect:/admin/authorManage";
-		
+		return "redirect:/admin/authorManage";	
 	}
+	
+
+	
+	/* 배송지 등록이 아니라 문의 게시글로 다시 작성시도 */
+	//@RequestMapping(value="customerCT.do", method = RequestMethod.POST)
+	@RequestMapping(value="customerCT.do")
+	public String QnAEnrollPOST(AuthorVO author, RedirectAttributes rttr) throws Exception{
+
+		logger.info("고객센터 접속 성공");
+		
+		return "redirect:/admin/customerCT";
+	}
+	
+	
+	
+	
+	
 
 	/* 배송지 상세, 수정 페이지 */
 	@GetMapping({"/authorDetail", "/authorModify"})

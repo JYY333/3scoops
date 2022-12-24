@@ -49,7 +49,9 @@
 			<div class="logo_area">
 				<a href="/main"><img src="../resources/img/mLogo.png"></a>
 			</div>
-			<div class="search_area">
+			
+			<!-- 검색바 영역임돠 -->
+			<%-- <div class="search_area">
                 	<div class="search_wrap">
                 		<form id="searchForm" action="/search" method="get">
                 			<div class="search_input">
@@ -62,7 +64,7 @@
                 			</div>
                 		</form>
                 	</div>
-			</div> 
+			</div>  --%>
 			
 			
 		<%-- 	<div class="login_area">
