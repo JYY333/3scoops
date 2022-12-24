@@ -235,9 +235,17 @@
 				const uploadPath = bobj.data("path");
 				const uuid = bobj.data("uuid");
 				const fileName = bobj.data("filename");
+<<<<<<< HEAD
 				const fileCallPath = encodeURIComponent(uploadPath + "/s_" + uuid + "_" + fileName);
 
+=======
+				
+				//const fileCallPath = encodeURIComponent(uploadPath + "/s_" + uuid + "_" + fileName);
+				const fileCallPath = encodeURIComponent(uploadPath + uuid + fileName);
+				
+>>>>>>> branch 'master' of https://github.com/JYY333/3scoops.git
 				$(this).find("img").attr('src', '/display?fileName=' + fileCallPath);
+				//$(this).find("img").attr('src', '/resources/img/1001.jpg');
 			} else {
 				$(this).find("img").attr('src', '/resources/img/goodsNoImage.png');
 			}
